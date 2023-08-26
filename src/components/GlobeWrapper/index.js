@@ -23,6 +23,8 @@ const GlobeWrapper = () => {
             <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
             Population: <i>${d.POP_EST}</i>
           `,
+          // We should use polygonCapMaterial here to render a 3js material
+          // which is a country flag image into the caps
         )(document.getElementById('globe'))
     })()
   }, [])

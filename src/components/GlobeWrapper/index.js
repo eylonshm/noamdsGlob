@@ -11,16 +11,14 @@ const GlobeWrapper = () => {
       console.log('countries -> ', countries)
       Globe()
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0)
-        .hexPolygonColor(
+        .polygonsData(countries.features)
+        .polygonCapColor(
           () =>
             `#${Math.round(Math.random() * Math.pow(2, 24))
               .toString(16)
               .padStart(6, '0')}`,
         )
-        .hexPolygonLabel(
+        .polygonLabel(
           ({ properties: d }) => ` 
             <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
             Population: <i>${d.POP_EST}</i>

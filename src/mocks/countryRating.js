@@ -1,5 +1,6 @@
 const countryRating = {
     name: 'Peru',
+    bestCity: 'Lima',
     costOfLiving: {
         rating: 4.2,
         description: `Peru is generally cheaper than other countries in the Americas, making it an attractive destination for digital nomads on a budget. Prices for housing, food, and transportation are relatively low, and you can find great deals if you look hard enough.`

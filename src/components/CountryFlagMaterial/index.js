@@ -2,8 +2,8 @@ import * as THREE from 'three'
 import { getCountryFlagSvg } from '../../utils'
 
 const createCountryFlagMaterial = (countryCode) => {
-  const countryFlag = getCountryFlagSvg(countryCode)
-  const texture = new THREE.TextureLoader().load(countryFlag)
+  const countryFlagSVG = getCountryFlagSvg(countryCode)
+  const texture = new THREE.TextureLoader().load(countryFlagSVG)
   const material = new THREE.MeshStandardMaterial({ map: texture })
   return material
 }

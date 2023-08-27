@@ -20,6 +20,9 @@ const GlobeWrapper = () => {
         .polygonStrokeColor(() => "rgba(0, 0, 0, 0.2)")
         .polygonSideColor(() => "rgba(255, 255, 255, 0.02)")
         .polygonCapColor(false)
+        .onPolygonClick((polygon) => {
+          console.log(polygon)
+        })
         .polygonLabel(
           ({ properties: d }) => `
             <b>${d.ADMIN} (${d.ISO_A2})</b> <br />

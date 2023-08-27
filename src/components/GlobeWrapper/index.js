@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { _GeoJSONLoader as GeoLoader } from '@loaders.gl/json'
 import countriesGeoJson from '../../datasets/countries.geojson'
 import { load } from '@loaders.gl/core'
+import createCountryFlagMaterial from '../CountryFlagMaterial'
 
 const GlobeWrapper = () => {
   useEffect(() => {
@@ -18,13 +19,14 @@ const GlobeWrapper = () => {
               .toString(16)
               .padStart(6, '0')}`,
         )
+        .polygonCapMaterial(() => createCountryFlagMaterial())
+        // We should use polygonCapMaterial here to render a 3js material
+        // which is a country flag image into the caps
         .polygonLabel(
           ({ properties: d }) => ` 
             <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
             Population: <i>${d.POP_EST}</i>
           `,
-          // We should use polygonCapMaterial here to render a 3js material
-          // which is a country flag image into the caps
         )(document.getElementById('globe'))
     })()
   }, [])

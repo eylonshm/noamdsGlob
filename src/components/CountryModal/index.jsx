@@ -1,13 +1,17 @@
-import countryRating from "../../mocks/countryRating";
-import styles from "./index.module.scss";
+import { AnimatePresence } from 'framer-motion'
+import Backdrop from './Backdrop'
+import Modal from './Modal'
 
-const CountryModal = ({ onClose }) => {
+const CountryModal = ({ open, handleClose }) => {
   return (
-    <>
-      <div className={styles.backdrop} onClick={onClose} />
-      <div className={styles.modal}>Modal</div>
-    </>
-  );
-};
+    <AnimatePresence initial={false} mode='wait' onExitComplete={() => null}>
+      {open && (
+        <Backdrop onClick={handleClose}>
+          <Modal handleClose={handleClose} />
+        </Backdrop>
+      )}
+    </AnimatePresence>
+  )
+}
 
-export default CountryModal;
+export default CountryModal

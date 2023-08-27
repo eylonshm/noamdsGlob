@@ -1,6 +1,6 @@
 import './App.css'
 import { Globe } from './components'
-import {useState} from 'react'
+import { useState } from 'react'
 import CountryModal from './components/CountryModal'
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Globe setClickedCountry={setClickedCountry}/>
-      {clickedCountry && <CountryModal onClose={onModalExit}/>}
+      <Globe setClickedCountry={setClickedCountry} />
+      <CountryModal open={clickedCountry} handleClose={onModalExit} />
     </div>
   )
 }

@@ -1,0 +1,33 @@
+@import '../../../styles/styles.module.scss';
+
+.modal {
+  position: relative;
+  background-color: $colorPrimary;
+  width: clamp(50%, 700px, 90%);
+  height: min(50%, 300px);
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  border-radius: $borderRadiusMedium;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 20;
+
+  .exitButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 3px;
+    border-radius: 50px;
+    background-color: #fff;
+    transition: 0.3s;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}

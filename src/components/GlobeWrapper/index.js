@@ -19,7 +19,10 @@ const GlobeWrapper = () => {
               .toString(16)
               .padStart(6, '0')}`,
         )
-        .polygonCapMaterial(() => createCountryFlagMaterial())
+        .polygonCapMaterial((feature) => {
+          const countryCode = feature.properties.ISO_A3
+          return createCountryFlagMaterial(countryCode)
+        })
         // We should use polygonCapMaterial here to render a 3js material
         // which is a country flag image into the caps
         .polygonLabel(

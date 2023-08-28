@@ -1,11 +1,14 @@
-import * as THREE from 'three'
-import { getCountryFlagSvg } from '../../utils'
+import * as THREE from 'three';
+import { getCountryFlagSvg } from '../../utils';
 
-const createCountryFlagMaterial = (countryCode) => {
-  const countryFlagSVG = getCountryFlagSvg(countryCode)
-  const texture = new THREE.TextureLoader().load(countryFlagSVG)
-  const material = new THREE.MeshStandardMaterial({ map: texture })
-  return material
-}
+const createCountryFlagMaterial = (countryCode, countryPostal) => {
+    const countryFlagSVG = getCountryFlagSvg(countryCode);
+    console.log(countryCode, countryPostal);
+    const map = new THREE.TextureLoader().load(
+        countryFlagSVG ||
+            `https://flagcdn.com/${countryPostal.toLowerCase()}.svg`
+    );
+    return new THREE.MeshStandardMaterial({ map });
+};
 
-export default createCountryFlagMaterial
+export default createCountryFlagMaterial;

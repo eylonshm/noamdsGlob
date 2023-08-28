@@ -18,8 +18,7 @@ const Modal = ({ handleClose }) => {
         className={styles.exitButton}
         onClick={handleClose}
       />
-      <p>Modal</p>
-      <button onClick={handleClose}>Close</button>
+      <h2 className={styles.title}>Country name</h2>
     </motion.div>
   );
 };

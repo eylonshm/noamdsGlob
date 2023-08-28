@@ -1,0 +1,13 @@
+@import '../../styles/styles.module.scss';
+
+.wrapper {
+    position: fixed;
+    color: $colorPrimary;
+    background-color: black;
+    font-size: 24px;
+    bottom: 30px;
+    padding: 4px 8px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    max-width: 80%;
+}

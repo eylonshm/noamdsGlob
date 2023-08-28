@@ -2,6 +2,7 @@ import './App.css'
 import { Globe } from './components'
 import { useState } from 'react'
 import CountryModal from './components/CountryModal'
+import Writer from './components/TypeWriter'
 
 function App() {
   const [clickedCountry, setClickedCountry] = useState()
@@ -14,6 +15,7 @@ function App() {
     <div className='App'>
       <Globe setClickedCountry={setClickedCountry} />
       <CountryModal open={clickedCountry} handleClose={onModalExit} />
+      <Writer/>
     </div>
   )
 }

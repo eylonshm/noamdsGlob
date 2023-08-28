@@ -16,6 +16,9 @@ function App() {
       <Globe setClickedCountry={setClickedCountry} />
       <CountryModal open={clickedCountry} handleClose={onModalExit} />
       <Writer/>
+      {/* <a href="https://www.linkedin.com/in/eylonshm" target="_blank" rel="noreferrer">
+      <img src='/assets/logo.svg' style={{position: 'fixed', left: '1rem', top: '1rem', cursor: 'pointer', height: '4rem'}} alt=""/>
+      </a> */}
     </div>
   )
 }

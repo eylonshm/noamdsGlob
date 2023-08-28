@@ -1,4 +1,6 @@
-import { findFlagUrlByIso3Code } from 'country-flags-svg'
+import { findFlagUrlByIso3Code } from 'country-flags-svg';
 
-export const getCountryFlagSvg = (countryISO3Code) =>
-  findFlagUrlByIso3Code(countryISO3Code)
+export const getCountryFlagSvg = (countryPostal) =>
+    countryPostal === 'COD'
+        ? `https://flagcdn.com/cd.svg`
+        : findFlagUrlByIso3Code(countryPostal);

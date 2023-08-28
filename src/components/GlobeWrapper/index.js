@@ -5,7 +5,7 @@ import countriesGeoJson from '../../datasets/countries.geojson';
 import { load } from '@loaders.gl/core';
 import createCountryFlagMaterial from '../CountryFlagMaterial';
 
-const GlobeWrapper = () => {
+const GlobeWrapper = ({ setClickedCountry }) => {
     useEffect(() => {
         (async () => {
             const { features } = await load(countriesGeoJson, GeoLoader);
@@ -23,8 +23,9 @@ const GlobeWrapper = () => {
                 .polygonStrokeColor(() => 'rgba(0, 0, 0, 0.2)')
                 .polygonSideColor(() => 'rgba(255, 255, 255, 0.02)')
                 .polygonCapColor(false)
-                .onPolygonClick((polygon) => {
-                    console.log(polygon);
+                .onPolygonClick((feature) => {
+                    const featureId = feature.__id;
+                    setClickedCountry(featureId);
                 })
                 .polygonLabel(
                     ({ properties: d }) => `

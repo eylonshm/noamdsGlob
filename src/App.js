@@ -1,8 +1,8 @@
 import './App.css'
 import { Globe } from './components'
-import { useState } from 'react'
-import CountryModal from './components/CountryModal'
+import { useState, lazy, Suspense } from 'react'
 import Writer from './components/TypeWriter'
+const CountryModal = lazy(() => import('./components/CountryModal'))
 
 function App() {
   const [clickedCountry, setClickedCountry] = useState()
@@ -14,6 +14,9 @@ function App() {
   return (
     <div className='App'>
       <Globe setClickedCountry={setClickedCountry} />
+      <Suspense fallback={<></>}>
+        <CountryModal/>
+      </Suspense>
       <CountryModal open={clickedCountry} handleClose={onModalExit} />
       <Writer/>
       {/* <a href="https://www.linkedin.com/in/eylonshm" target="_blank" rel="noreferrer">

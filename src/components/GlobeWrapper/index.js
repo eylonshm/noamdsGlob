@@ -1,11 +1,19 @@
 import Globe from 'globe.gl';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { _GeoJSONLoader as GeoLoader } from '@loaders.gl/json';
 import countriesGeoJson from '../../datasets/countries.geojson';
 import { load } from '@loaders.gl/core';
 import createCountryFlagMaterial from '../CountryFlagMaterial';
 
 const GlobeWrapper = ({ setClickedCountry }) => {
+    const [data, setData] = useState()
+
+    useEffect(() => {
+        import('../../datasets/countries.json').then(data => {
+            setData(data);
+          });
+    }, [])
+
     useEffect(() => {
         (async () => {
             const { features } = await load(countriesGeoJson, GeoLoader);

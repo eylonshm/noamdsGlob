@@ -32,11 +32,18 @@
   }
 
   .title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     margin: 0;
     text-align: left;
     padding-left: 2rem;
     border-bottom: 1px solid #ddd;
     width: 100%;
+
+    h2 {
+      margin: 0 12px 0 0;
+    }
   }
 
   .content {
@@ -58,7 +65,7 @@
       border: 5px solid rgba(0, 0, 0, 0);
       background-clip: padding-box;
       border-radius: 20px;
-      background-color: #BBB;
+      background-color: #bbb;
     }
   }
 }

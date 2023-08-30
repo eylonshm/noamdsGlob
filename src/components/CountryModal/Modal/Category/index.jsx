@@ -1,6 +1,7 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import styles from "./index.module.scss";
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import styles from './index.module.scss'
+import RatingBar from '../../../RatingBar'
 
 const descriptionAnimatoin = {
   initial: {
@@ -16,7 +17,7 @@ const descriptionAnimatoin = {
     opacity: 0,
   },
   transition: {
-    type: "spring",
+    type: 'spring',
     bounce: 0.7,
     opacity: {
       animate: {
@@ -24,24 +25,25 @@ const descriptionAnimatoin = {
       },
     },
   },
-};
+}
 
 const Category = ({ name, rating, description }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const triggerDescription = () => {
-    setOpen((open) => !open);
-  };
+    setOpen((open) => !open)
+  }
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.title} onClick={triggerDescription}>
         <img
-          alt=">"
+          alt='>'
           className={styles.arrow}
-          src="/assets/arrowRight.svg"
+          src='/assets/arrowRight.svg'
         ></img>
         <h3 className={styles.name}>{name}</h3>
+        <RatingBar rating={rating} />
       </div>
       <AnimatePresence>
         {open && (
@@ -51,7 +53,7 @@ const Category = ({ name, rating, description }) => {
         )}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
-export default Category;
+export default Category

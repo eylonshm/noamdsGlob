@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: $colorPrimary;
   width: clamp(42%, 500px, 70%);
-  height: clamp(40%, 500px, 50%);
+  height: clamp(40%, 500px, 60%);
   margin: auto;
   padding-top: 8px;
   border-radius: 12px;
@@ -17,7 +17,7 @@
   .exitButton {
     position: absolute;
     right: 8px;
-    top: 8px;
+    top: 10px;
     padding: 3px;
     border-radius: 50px;
     background-color: #fff;
@@ -37,7 +37,8 @@
     justify-content: flex-start;
     margin: 0;
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid #ddd;
     width: 100%;
 

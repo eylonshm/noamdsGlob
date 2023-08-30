@@ -4,7 +4,7 @@
   position: relative;
   border-radius: 11px;
   height: 1.2rem;
-  width: 10rem;
+  width: clamp(30%, 10rem, 60%);
   background-color: #f5f5f5;
 
   .colored {

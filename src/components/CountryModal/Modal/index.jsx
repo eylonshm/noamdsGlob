@@ -39,6 +39,11 @@ const renderExitButton = (handleClose) => (
 )
 
 const Modal = ({ handleClose, data }) => {
+  const nextCountries =
+    typeof data.nextCountries === 'string'
+      ? data.nextCountries
+      : data.nextCountries.join(', ')
+
   const renderCategories = () =>
     categories.map((category) => (
       <Category
@@ -69,10 +74,7 @@ const Modal = ({ handleClose, data }) => {
           data.bestCityForDigitalNomads,
         )}
         {renderCategories()}
-        {renderTextCategory(
-          copies.nextCountriesLabal,
-          data.nextCountriesToMoveTo.join(', '),
-        )}
+        {renderTextCategory(copies.nextCountriesLabal, nextCountries)}
       </div>
     </motion.div>
   )

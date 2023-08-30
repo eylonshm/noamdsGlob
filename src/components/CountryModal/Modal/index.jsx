@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 import dropAnimation from "../dropAnimation";
+import Category from "./Category";
 
-const Modal = ({ handleClose }) => {
+const Modal = ({ handleClose, data }) => {
+  console.log(data);
   return (
     <motion.div
       onClick={(e) => e.stopPropagation()}
@@ -18,7 +20,51 @@ const Modal = ({ handleClose }) => {
         className={styles.exitButton}
         onClick={handleClose}
       />
-      <h2 className={styles.title}>Country name</h2>
+      <h2 className={styles.title}>{data?.countryName}</h2>
+      <div className={styles.content}>
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+        <Category
+          name={"Overall"}
+          description={
+            "desc djsakldj sakjd ahsikdj sahidusaj hdisau dhsaiud sahidus ahdiasu dhasiud hsaidu ashdiusa hdsaiud hsaidu ahi"
+          }
+          rating={8.2}
+        />
+      </div>
     </motion.div>
   );
 };

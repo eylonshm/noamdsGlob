@@ -1987,8 +1987,7 @@
     "peaceAndConflictsRating": 8,
     "peaceAndConflictsDescription": "Guyana is a relatively peaceful country and there is low risk of violent or political conflict. The country has had a sense of stability since its independence and is a safe and pleasant place to live for digital nomads."
   },
-  "undefined": {
-    "text": {
+  "MWI": {
       "countryName": "Malawi",
       "GU_A3": "MWI",
       "overallRating": 5,
@@ -2016,7 +2015,6 @@
       "nightLifeDescription": "Nightlife in Malawi is limited, but there are still some bars and restaurants that stay open late. Most of the nightlife is concentrated in the larger cities, so if you're looking for a night out, you'll need to head to Lilongwe or Blantyre.",
       "peaceAndConflictsRating": 9,
       "peaceAndConflictsDescription": "Malawi is a peaceful country, with no major conflicts or civil wars. Crime rates are generally low, and the country is generally safe for travellers."
-    }
   },
   "HRV": {
     "countryName": "Croatia",
@@ -3649,7 +3647,6 @@
     "peaceAndConflictsDescription": "Portugal is a peaceful country with no ongoing internal or external conflicts. However, it is important to be aware of the current political situation and act cautiously when travelling or living in the country."
   },
   "PRY": {
-    "text": {
       "countryName": "Paraguay",
       "GU_A3": "PRY",
       "overallRating": 8,
@@ -3677,7 +3674,6 @@
       "nightLifeDescription": "While Paraguay is not known for its night life, the book scene is vibrant with lots of options for fun and excitement throughout the cities and towns.",
       "peaceAndConflictsRating": 9,
       "peaceAndConflictsDescription": "Paraguay is a peaceful and politically stable country, with no conflicts and a low level of crime and corruption. The country is situated in South America but does not usually have any interaction with other countries in the continent."
-    }
   },
   "PSX": {
     "countryName": "Palestine",

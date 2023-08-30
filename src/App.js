@@ -16,7 +16,7 @@ function App() {
     <div className='App'>
       <Globe setClickedCountry={setClickedCountry} />
       <Suspense>
-      <CountryModal open={clickedCountry} handleClose={onModalExit} />
+      <CountryModal open={clickedCountry} handleClose={onModalExit} countryCode={clickedCountry}/>
       </Suspense>
       <Writer/>
       {/* <a href="https://www.linkedin.com/in/eylonshm" target="_blank" rel="noreferrer">

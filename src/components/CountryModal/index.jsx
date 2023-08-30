@@ -12,14 +12,14 @@ const getJson = () =>
 
 const getJsonPromise = wrapPromise(getJson());
 
-const CountryModal = ({ open, handleClose }) => {
+const CountryModal = ({ open, handleClose, countryCode }) => {
   const countriesData = getJsonPromise.read();
 
   return (
     <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
       {open && (
         <Backdrop onClick={handleClose}>
-          <Modal handleClose={handleClose} />
+          <Modal handleClose={handleClose} data={countriesData[countryCode]} />
         </Backdrop>
       )}
     </AnimatePresence>

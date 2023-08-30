@@ -24,14 +24,11 @@ const GlobeWrapper = ({ setClickedCountry }) => {
                 .polygonSideColor(() => 'rgba(255, 255, 255, 0.02)')
                 .polygonCapColor(false)
                 .onPolygonClick((feature) => {
-                    const featureId = feature.__id;
-                    setClickedCountry(featureId);
+                    console.log(feature);
+                    setClickedCountry(feature.properties.GU_A3);
                 })
                 .polygonLabel(
-                    ({ properties: d }) => `
-            <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-            Population: <i>${d.POP_EST}</i>
-          `
+                    ({ properties: d }) => `<b>${d.ADMIN}</b>`
                 )(document.getElementById('globe'));
 
             globe.controls().autoRotate = true;

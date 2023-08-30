@@ -1,3 +1,8 @@
 {
-    "typeWriter": "Click a country & find if it's suits your needs"
+    "typeWriter": "Click a country & find if it's suits your needs",
+    "countryModal": {
+        "bestCityLabal": "Best city for digital nomads",
+        "nextCountriesLabal": "Countries to move next"
+
+    }
 }

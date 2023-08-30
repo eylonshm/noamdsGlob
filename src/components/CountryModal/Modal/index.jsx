@@ -4,6 +4,9 @@ import dropAnimation from '../dropAnimation'
 import Category from './Category'
 import { camelCaseToText } from '../../../utils'
 import RatingBar from '../../RatingBar'
+import copiesPrefix from '../../../copies.json'
+
+const copies = copiesPrefix.countryModal
 
 const categories = [
   'language',
@@ -18,6 +21,22 @@ const categories = [
   'nightLife',
   'peaceAndConflicts',
 ]
+
+const renderTextCategory = (labal, data) => (
+  <h3 className={styles.textCategory}>
+    {`${labal}: `}
+    <span className={styles.data}> {data}</span>
+  </h3>
+)
+
+const renderExitButton = (handleClose) => (
+  <img
+    alt='x'
+    src='/assets/x.svg'
+    className={styles.exitButton}
+    onClick={handleClose}
+  />
+)
 
 const Modal = ({ handleClose, data }) => {
   const renderCategories = () =>
@@ -39,17 +58,22 @@ const Modal = ({ handleClose, data }) => {
       animate='visible'
       exit='exit'
     >
-      <img
-        alt='x'
-        src='/assets/x.svg'
-        className={styles.exitButton}
-        onClick={handleClose}
-      />
+      {renderExitButton(handleClose)}
       <div className={styles.title}>
         <h2>{data?.countryName}</h2>
         <RatingBar rating={data.overallRating} />
       </div>
-      <div className={styles.content}>{renderCategories()}</div>
+      <div className={styles.content}>
+        {renderTextCategory(
+          copies.bestCityLabal,
+          data.bestCityForDigitalNomads,
+        )}
+        {renderCategories()}
+        {renderTextCategory(
+          copies.nextCountriesLabal,
+          data.nextCountriesToMoveTo.join(', '),
+        )}
+      </div>
     </motion.div>
   )
 }

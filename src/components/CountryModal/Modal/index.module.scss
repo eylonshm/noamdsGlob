@@ -52,6 +52,16 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
+    .textCategory {
+      width: 90%;
+      text-align: start;
+      margin: 8px 0 8px 2px;
+
+      .data {
+        margin-left: 4px;
+      }
+    }
+
     &::-webkit-scrollbar-track {
       border-radius: 10px;
       background-color: white;
